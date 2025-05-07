@@ -78,11 +78,12 @@ input[type="text"] {
 /* Produtos */
 .produtos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsiva */
   gap: 20px;
   margin-top: 30px;
 }
 
+/* Produto */
 .produto {
   background-color: white;
   padding: 15px;
@@ -128,11 +129,17 @@ input[type="text"] {
   color: red;
   font-weight: bold;
 }
+
 /* Responsividade para telas menores (exemplo para dispositivos móveis) */
 @media screen and (max-width: 600px) {
   .filtros button {
-    width: 30%;               /* Faz os botões ocuparem toda a largura disponível */
-    box-sizing: border-box;    /* Garante que a largura dos botões ocupe a área corretamente */
-    margin-bottom: 10px;       /* Adiciona um espaço entre os botões nas telas pequenas */
+    width: 30%;  /* Botões de filtro ocupando 30% da largura */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  /* Ajuste a grid de produtos para garantir que eles fiquem lado a lado em telas pequenas */
+  .produtos {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
   }
 }

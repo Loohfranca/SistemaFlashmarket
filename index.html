@@ -6,21 +6,40 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>Login - FlashMarket</title>
-  <link rel="stylesheet" href="login.css">
+
+  <title>FlashMarket - Produtos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="login-page">
-  <div class="login-container">
-    <img src="assets/Design sem nome (11).png" alt="FlashMarket" class="logo-login">
+<body>
 
-    <h2 class="titulo-login">Bem-vindo</h2>
-    <p  class="pg-login">Faça login para acessar o painel</p>
+  <header>
+    <div class="container-logo">
+      <img src="imagens/Logo do FlashMarket com Raio.png" alt="Logo FlashMarket">
+    </div>
+  </header>
 
-    <form action="produto.html" method="get">
-      <input type="text" placeholder="Usuário" name="usuario" required>
-      <input type="password" placeholder="Senha" name="senha" required>
-      <button type="submit">Entrar</button>
-    </form>
-  </div>
+  <main>
+    <!-- Caixa de pesquisa -->
+    <section>
+      <input type="text" id="searchInput" placeholder="Pesquisar produto..." onkeyup="filtrarProdutos()">
+    </section>
+
+    <!-- Filtros de categoria -->
+    <section class="filtros">
+      <button onclick="filtrarCategoria('Todas')">Todas</button>
+      <button onclick="filtrarCategoria('Bebidas')">Bebidas</button>
+      <button onclick="filtrarCategoria('Mercearia')">Mercearia</button>
+      <button onclick="filtrarCategoria('Limpeza')">Limpeza</button>
+      <button onclick="filtrarCategoria('Higiene')">Higiene</button>
+      <button class="btn-destaque" onclick="filtrarCategoria('ofertas')"> Ofertas </button>
+    </section>
+
+    <!-- Produtos - agora com o id "produtos-list" -->
+    <section class="produtos" id="produtos-list">
+      <!-- Produtos serão inseridos dinamicamente aqui -->
+    </section>
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>

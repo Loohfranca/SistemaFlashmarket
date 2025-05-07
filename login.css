@@ -1,0 +1,269 @@
+/* ---------- LOGIN PAGE ---------- */
+.login-page {
+  background: #0f1c2e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: #1c2e4f;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00000055;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.logo-login {
+  max-width: 200px;
+  
+  
+}
+.titulo-login{
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.pg-login{
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;  /* Adicionando uma borda sutil */
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.login-container button {
+  width: 100%;
+  background-color: #f7931e;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px; /* Distância entre o botão e o campo de senha */
+}
+
+.login-container button:hover {
+  background-color: #e67f00;
+  
+}
+
+/* Fixa o alinhamento dos inputs e botão */
+input[type="text"],
+input[type="password"] {
+  box-sizing: border-box; /* Evita que o padding "quebre" o layout */
+}
+button{
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+
+
+  header {
+    background-color: #0f1c2e;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .container-logo img {
+    max-width: 200px;
+    height: auto;
+  }
+  
+  main {
+    background-color: #f7f9fb;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 20px;
+    margin-top: -10px;
+  }
+  
+  /* Filtros */
+  .filtros h2 {
+    text-align: center;
+    color: #1d2d4f;
+    margin-bottom: 15px;
+  }
+  
+  .botoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  .botoes button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 2px solid #1d2d4f;
+    background-color: white;
+    color: #1d2d4f;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .botoes .ativo,
+  .botoes button:hover {
+    background-color: #1d2d4f;
+    color: white;
+  }
+  
+  /* Produtos */
+  .produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+  }
+  
+  .produto {
+    background-color: white;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  
+  .produto:hover {
+    transform: scale(1.02);
+  }
+  
+  .produto img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .produto h3 {
+    color: #1d2d4f;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  
+  .preco {
+    color: #f7931e;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .status {
+    font-size: 12px;
+    color: green;
+  }
+  
+  .status.alerta {
+    color: red;
+  }
+  header {
+  background-color: #0f1c2e;
+  text-align: center;
+  padding: 20px;
+}
+
+.container-logo img {
+  max-width: 200px;
+  height: auto;
+}
+
+main {
+  background-color: #f7f9fb;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 20px;
+  margin-top: -10px;
+}
+
+/* Filtros */
+.filtros h2 {
+  text-align: center;
+  color: #1d2d4f;
+  margin-bottom: 15px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.botoes button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 2px solid #1d2d4f;
+  background-color: white;
+  color: #1d2d4f;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.botoes .ativo,
+.botoes button:hover {
+  background-color: #1d2d4f;
+  color: white;
+}
+
+/* Produtos */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.produto {
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.produto:hover {
+  transform: scale(1.02);
+}
+
+.produto img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.produto h3 {
+  color: #1d2d4f;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.preco {
+  color: #f7931e;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.status {
+  font-size: 12px;
+  color: green;
+}
+
+.status.alerta {
+  color: red;
+}
+

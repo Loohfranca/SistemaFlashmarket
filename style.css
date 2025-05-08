@@ -1,128 +1,260 @@
-/* Estilos para o layout de consulta de produtos */
+/* Estilos gerais */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f9fb;
-  padding: 20px;
+  font-family: 'Roboto', sans-serif;  /* Fonte moderna */
+  background-color: #f4f7fb;  /* Cor de fundo suave */
   margin: 0;
-  background-color: #fc9a22;
+  padding: 20px;
+  color: #333;  /* Cor do texto */
 }
 
+/* Header */
 header {
+ 
+  color: #fff;  /* Cor do texto no header */
   text-align: center;
-  margin-bottom: 30px;
-  background-color: #1d2d4f;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header .container-logo img {
-  max-width: 200px;
+  max-width: 300px;
   height: auto;
-
 }
+
+
+/* Carrossel */
+.carrossel {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 400px; /* Altura do banner */
+  overflow: hidden; /* Esconde as imagens fora da área visível */
+}
+
+/* Container de itens do carrossel */
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Transição suave */
+}
+
+.carousel-item {
+  width: 100%; /* Cada item vai ocupar 100% do espaço do carrossel */
+  flex-shrink: 0; /* Garante que os itens não encolham */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item img {
+  width: 100%;  /* Largura de cada imagem no carrossel */
+  height: 400px; /* Altura de cada imagem */
+  object-fit: cover;  /* Ajusta a imagem para cobrir o espaço sem distorcer */
+  border-radius: 10px;
+}
+
+
+.carousel-item img {
+  width: 100%;  /* Largura de cada imagem no carrossel */
+  height: 400px; /* Altura de cada imagem */
+  object-fit: cover;  /* Ajuste a imagem para cobrir completamente o espaço */
+  border-radius: 10px;
+}
+
+/* Botões de navegação */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Escurece o botão no hover */
+}
+
+
+
+
+.ofertas{
+  color: rgb(7, 129, 25);
+  font-weight: bold;
+  font-size: 21px;
+}
+
+
+/* Botões de navegação */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Escurece o botão no hover */
+}
+
+/* Botões de navegação */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Escurece o botão no hover */
+}
+
 
 /* Caixa de pesquisa */
 input[type="text"] {
-  padding: 10px;
+  padding: 12px 20px;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   margin: 20px auto;
   display: block;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  border-radius: 30px;
+  border: 2px solid #1d2d4f;
   font-size: 16px;
-  
+  background-color: #fff;
+  transition: border 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #f7931e;  /* Borda laranja ao focar */
+  outline: none;
 }
 
 /* Estilo dos botões de filtro */
 .filtros {
-  text-align: center;
-  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
 .filtros button {
-  padding: 8px 16px;
+  padding: 12px 25px;
   background-color: #1d2d4f;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background 0.3s;
-  font-size: 14px;
-  white-space: nowrap;
-
+  transition: background 0.3s, transform 0.3s ease;
+  font-size: 16px;
 }
 
 .filtros button:hover {
-  background-color: #1c2762;
-  
+  background-color: #f7931e; /* Laranja no hover */
+  transform: scale(1.05); /* Efeito de aumento */
 }
 
 /* Destaque para o botão "Todas" */
 .filtros .btn-destaque {
-  background-color: #3c8604;  /* Cor de destaque */
-  color: white;
-  font-weight: bold; 
-       /* Negrito para chamar mais atenção */
+  background-color: #f7931e;
+  font-weight: bold;
 }
 
- .filtros .btn-destaque:hover {
-  background-color:#1d2d4f;  /* Cor de hover diferente para o botão destacado */
-  
+.filtros .btn-destaque:hover {
+  background-color: #e67e00;
 }
-
-
 
 /* Produtos */
 .produtos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsiva */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsivo */
+  gap: 25px;
   margin-top: 30px;
 }
 
-/* Produto */
 .produto {
-  background-color: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .produto:hover {
-  transform: scale(1.05);
+  transform: scale(1.05);  /* Aumenta o produto no hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra maior no hover */
 }
 
 .produto img {
-  width: 100px;
+  width: 150px;
   height: auto;
   margin-bottom: 15px;
+  border-radius: 8px;
 }
 
 .produto h3 {
-  margin: 10px 0;
-  font-size: 18px;
-  color: #1d2d4f;
-  font-family: "Poppins", sans-serif;
+  margin: 15px 0;
+  font-size: 20px;
+  color: #333;
   font-weight: 600;
 }
 
 .produto .preco {
-  color: #f7931e;
+  color: #f7931e; /* Preço em laranja */
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .produto .status {
   display: block;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .produto .status.alerta {
@@ -130,16 +262,18 @@ input[type="text"] {
   font-weight: bold;
 }
 
-/* Responsividade para telas menores (exemplo para dispositivos móveis) */
+/* Responsividade para telas menores */
 @media screen and (max-width: 600px) {
   .filtros button {
-    width: 30%;  /* Botões de filtro ocupando 30% da largura */
+    width: 45%;
     box-sizing: border-box;
-    margin-bottom: 10px;
   }
 
-  /* Ajuste a grid de produtos para garantir que eles fiquem lado a lado em telas pequenas */
   .produtos {
     grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
   }
+  .carrossel {
+    height: 300px;  /* Menor altura para telas pequenas */
+  }
 }
+

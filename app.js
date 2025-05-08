@@ -9,9 +9,33 @@ const produtos = [
     { id: 7, nome: "Heinaken", preco:  4.49, categoria: "ofertas", imagem: "imagens/cerveja.jpg" }
    
   ];
+  let slideIndex = 0;
+
+  function moveSlide(n) {
+    const slides = document.querySelectorAll(".carousel-item");
+    const totalSlides = slides.length;
+    
+    slideIndex += n;
+  
+    // Se o índice for menor que 0, vai para o último slide
+    if (slideIndex < 0) {
+      slideIndex = totalSlides - 1;
+    } 
+    // Se o índice for maior que o total de slides, volta para o primeiro
+    else if (slideIndex >= totalSlides) {
+      slideIndex = 0;
+    }
+  
+    // Mover o carrossel para a posição correta
+    const carouselContainer = document.querySelector(".carousel-container");
+    carouselContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+  }
+  
+
+
   
   // Função para exibir os produtos
-  function exibirProdutos(lista) {
+function exibirProdutos(lista) {
     const produtosList = document.getElementById("produtos-list");
     produtosList.innerHTML = ''; // Limpar a lista de produtos
   
@@ -21,10 +45,10 @@ const produtos = [
       produtoDiv.innerHTML = `
         <img src="${produto.imagem}" alt="${produto.nome}">
         <h3>${produto.nome}</h3>
-        <p class="preco">R$ ${produto.preco.toFixed(2)}</p>
- 
-       
-      `;
+        ${produto.categoria === "ofertas" ?
+            `<p class="ofertas">R$ ${produto.preco.toFixed(2)}</p>`: 
+            `<p class="preco">R$ ${produto.preco.toFixed(2)}</p>`
+          }`
       produtosList.appendChild(produtoDiv);
     });
   }
@@ -42,12 +66,7 @@ const produtos = [
     const termoBusca = document.getElementById("searchInput").value.toLowerCase();
     const produtosFiltrados = produtos.filter(p => p.nome.toLowerCase().includes(termoBusca));
     exibirProdutos(produtosFiltrados);
-    
   }
   
-  
-
-
   // Inicializar exibindo todos os produtos
   exibirProdutos(produtos);
-  

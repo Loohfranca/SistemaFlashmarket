@@ -150,7 +150,6 @@ input[type="text"]:focus {
   background-color: #f7931e;
   transform: scale(1.05);
 }
-
 /* Produtos */
 .produtos {
   display: grid;
@@ -207,17 +206,17 @@ input[type="text"]:focus {
 
 /* Ajustes para telas pequenas */
 
-/* Para telas pequenas, como 768px, exibe 2 colunas */
+/* Para telas de até 768px, exibe 2 colunas */
 @media screen and (max-width: 768px) {
   .produtos {
     grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
   }
 }
 
-/* Para telas ainda menores, como 400px, exibe 1 coluna */
+/* Para telas de até 400px, exibe 2 colunas */
 @media screen and (max-width: 400px) {
   .produtos {
-    grid-template-columns: 1fr; /* 1 coluna em dispositivos muito pequenos */
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas para 400px */
   }
 
   .produto {

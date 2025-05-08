@@ -29,36 +29,28 @@ header .container-logo img {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  height: 400px; /* Altura do banner */
-  overflow: hidden; /* Esconde as imagens fora da área visível */
+  height: 400px;
+  overflow: hidden; /* Esconde as imagens que estão fora da área visível */
 }
 
 /* Container de itens do carrossel */
 .carousel-container {
   display: flex;
-  transition: transform 0.5s ease-in-out; /* Transição suave */
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-  width: 100%; /* Cada item vai ocupar 100% do espaço do carrossel */
-  flex-shrink: 0; /* Garante que os itens não encolham */
+  width: 100%;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .carousel-item img {
-  width: 100%;  /* Largura de cada imagem no carrossel */
-  height: 400px; /* Altura de cada imagem */
-  object-fit: cover;  /* Ajusta a imagem para cobrir o espaço sem distorcer */
-  border-radius: 10px;
-}
-
-
-.carousel-item img {
-  width: 100%;  /* Largura de cada imagem no carrossel */
-  height: 400px; /* Altura de cada imagem */
-  object-fit: cover;  /* Ajuste a imagem para cobrir completamente o espaço */
+  width: 100%;  /* Ajusta a largura da imagem */
+  height: 400px; /* Mantém a altura do banner */
+  object-fit: cover;  /* Ajusta a imagem sem distorção */
   border-radius: 10px;
 }
 
@@ -88,6 +80,36 @@ header .container-logo img {
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8); /* Escurece o botão no hover */
 }
+
+/* Ajustando o layout para telas pequenas (Responsividade) */
+@media screen and (max-width: 768px) {
+  .carrossel {
+    height: 250px; /* Menor altura para telas pequenas */
+  }
+
+  .carousel-item img {
+    height: 250px; /* Ajusta a altura das imagens em telas pequenas */
+  }
+
+  .prev, .next {
+    font-size: 20px; /* Menor tamanho para os botões de navegação */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .carrossel {
+    height: 200px; /* Menor altura em dispositivos ainda menores */
+  }
+
+  .carousel-item img {
+    height: 200px; /* Ajusta a altura para 200px em telas pequenas */
+  }
+
+  .prev, .next {
+    font-size: 18px; /* Tamanho ainda menor para os botões */
+  }
+}
+
 
 
 
@@ -208,6 +230,22 @@ input[type="text"]:focus {
   background-color: #e67e00;
 }
 
+/* Ajustes para telas pequenas */
+@media screen and (max-width: 768px) {
+  .filtros button {
+    width: 25%;  /* Faz os botões ocuparem toda a largura disponível */
+    box-sizing: border-box;  /* Garante que a largura dos botões ocupe a área corretamente */
+    margin-bottom: 10px;  /* Adiciona um espaço entre os botões */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .filtros button {
+    width: 90%;  /* Botões ocupando quase toda a largura em telas muito pequenas */
+    margin-bottom: 10px;
+  }
+}
+
 /* Produtos */
 .produtos {
   display: grid;
@@ -262,18 +300,15 @@ input[type="text"]:focus {
   font-weight: bold;
 }
 
-/* Responsividade para telas menores */
-@media screen and (max-width: 600px) {
-  .filtros button {
-    width: 45%;
-    box-sizing: border-box;
-  }
-
+/* Ajustando para telas pequenas */
+@media screen and (max-width: 768px) {
   .produtos {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
-  }
-  .carrossel {
-    height: 300px;  /* Menor altura para telas pequenas */
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
   }
 }
 
+@media screen and (max-width: 480px) {
+  .produtos {
+    grid-template-columns: 1fr;  /* 1 coluna em dispositivos móveis */
+  }
+}

@@ -9,7 +9,6 @@ body {
 
 /* Header */
 header {
- 
   color: #fff;  /* Cor do texto no header */
   text-align: center;
   padding: 20px;
@@ -22,7 +21,6 @@ header .container-logo img {
   height: auto;
 }
 
-
 /* Carrossel */
 .carrossel {
   position: relative;
@@ -33,7 +31,6 @@ header .container-logo img {
   overflow: hidden; /* Esconde as imagens que estão fora da área visível */
 }
 
-/* Container de itens do carrossel */
 .carousel-container {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -48,9 +45,9 @@ header .container-logo img {
 }
 
 .carousel-item img {
-  width: 100%;  /* Ajusta a largura da imagem */
-  height: 400px; /* Mantém a altura do banner */
-  object-fit: cover;  /* Ajusta a imagem sem distorção */
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
@@ -81,105 +78,39 @@ header .container-logo img {
   background-color: rgba(0, 0, 0, 0.8); /* Escurece o botão no hover */
 }
 
-/* Ajustando o layout para telas pequenas (Responsividade) */
+/* Ajustes para telas pequenas */
 @media screen and (max-width: 768px) {
   .carrossel {
-    height: 250px; /* Menor altura para telas pequenas */
+    height: 250px;
   }
 
   .carousel-item img {
-    height: 250px; /* Ajusta a altura das imagens em telas pequenas */
+    height: 250px;
   }
 
   .prev, .next {
-    font-size: 20px; /* Menor tamanho para os botões de navegação */
+    font-size: 20px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .carrossel {
-    height: 200px; /* Menor altura em dispositivos ainda menores */
+    height: 200px;
   }
 
   .carousel-item img {
-    height: 200px; /* Ajusta a altura para 200px em telas pequenas */
+    height: 200px;
   }
 
   .prev, .next {
-    font-size: 18px; /* Tamanho ainda menor para os botões */
+    font-size: 18px;
   }
 }
-
-
-
-
-
-.ofertas{
-  color: rgb(7, 129, 25);
-  font-weight: bold;
-  font-size: 21px;
-}
-
-
-/* Botões de navegação */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 24px;
-  border-radius: 50%;
-  z-index: 100;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Escurece o botão no hover */
-}
-
-/* Botões de navegação */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 24px;
-  border-radius: 50%;
-  z-index: 100;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Escurece o botão no hover */
-}
-
 
 /* Caixa de pesquisa */
 input[type="text"] {
   padding: 12px 20px;
-  width: 100%;
+  width:80%;
   max-width: 350px;
   margin: 20px auto;
   display: block;
@@ -191,7 +122,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border-color: #f7931e;  /* Borda laranja ao focar */
+  border-color: #f7931e;
   outline: none;
 }
 
@@ -216,34 +147,8 @@ input[type="text"]:focus {
 }
 
 .filtros button:hover {
-  background-color: #f7931e; /* Laranja no hover */
-  transform: scale(1.05); /* Efeito de aumento */
-}
-
-/* Destaque para o botão "Todas" */
-.filtros .btn-destaque {
   background-color: #f7931e;
-  font-weight: bold;
-}
-
-.filtros .btn-destaque:hover {
-  background-color: #e67e00;
-}
-
-/* Ajustes para telas pequenas */
-@media screen and (max-width: 768px) {
-  .filtros button {
-    width: 25%;  /* Faz os botões ocuparem toda a largura disponível */
-    box-sizing: border-box;  /* Garante que a largura dos botões ocupe a área corretamente */
-    margin-bottom: 10px;  /* Adiciona um espaço entre os botões */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .filtros button {
-    width: 90%;  /* Botões ocupando quase toda a largura em telas muito pequenas */
-    margin-bottom: 10px;
-  }
+  transform: scale(1.05);
 }
 
 /* Produtos */
@@ -300,15 +205,22 @@ input[type="text"]:focus {
   font-weight: bold;
 }
 
-/* Ajustando para telas pequenas */
+/* Ajustes para telas pequenas */
+
+/* Para telas pequenas, como 768px, exibe 2 colunas */
 @media screen and (max-width: 768px) {
   .produtos {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
   }
 }
 
-@media screen and (max-width: 480px) {
+/* Para telas ainda menores, como 400px, exibe 1 coluna */
+@media screen and (max-width: 400px) {
   .produtos {
-    grid-template-columns: 1fr;  /* 1 coluna em dispositivos móveis */
+    grid-template-columns: 1fr; /* 1 coluna em dispositivos muito pequenos */
+  }
+
+  .produto {
+    margin: 10px 0; /* Ajusta o espaçamento entre os produtos */
   }
 }
